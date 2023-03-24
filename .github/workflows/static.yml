@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a MkDocs site to GitHub Pages
-name: Deploy MkDocs with GitHub Pages dependencies preinstalled
+name: Deploy MkDocs with GitHub Pages
 
 on:
   push:
@@ -14,15 +14,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  # issues: write
-  # pull-requests: write
-
 
 # Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
-  
+
 jobs:
   # Build job
   build:
@@ -31,28 +28,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'         
+          python-version: "3.11"
+
       - name: Install MkDocs and Material for MkDocs
         run: pip install mkdocs mkdocs-material
-      - uses: actions/cache@v2
+
+      - uses: actions/cache@v3
         with:
           key: ${{ github.ref }}
-          path: .cache       
+          path: .cache
+
       - name: Build site (_site directory name is used for Jekyll compatiblity)
         run: mkdocs build --config-file ./mkdocs.yml --site-dir ./_site
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload mkdocs site
-          path: './_site'
+          path: "./_site"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-
-
