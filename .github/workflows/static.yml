@@ -42,7 +42,7 @@ jobs:
 
       - uses: actions/cache@v3
         with:
-          key: ${{ github.ref }}
+          key: ${{ github.sha }}
           path: .cache
 
       - name: Build site (_site directory name is used for Jekyll compatiblity)
