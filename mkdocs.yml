@@ -1,4 +1,4 @@
 site_name: My Docs
 site_author: stefano.bianconi@axesstmc.com
 site_description: Test GitHub pages
-theme: readthedocs
+# theme: readthedocs
