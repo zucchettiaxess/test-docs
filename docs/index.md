@@ -6,6 +6,8 @@ Questo è un esempio.
 
 Secondo esempio.
 
+terzo esempio (BUONA VITA).
+
 ## Documentazione progetto
 
 ## Commands
