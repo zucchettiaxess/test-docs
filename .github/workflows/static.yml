@@ -37,5 +37,5 @@ jobs:
           # CUSTOM_DOMAIN: optionaldomain.com
           CONFIG_FILE: mkdocs.yml
           # EXTRA_PACKAGES: build-base
-          # GITHUB_DOMAIN: github.myenterprise.com
+          GITHUB_DOMAIN: zucchettiaxess.github.io
           # REQUIREMENTS: folder/requirements.txt
